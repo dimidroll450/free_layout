@@ -11,15 +11,24 @@
 // === / Mixin ===
 
 // === Variables ===
+$base: 4px;
+
 $fw-bold: 700;
 $fw-medium: 500;
 $fw-regular: 400;
 
-$padding-vertical-xs: 20px;
-$padding-vertical-sm: 60px;
-$padding-vertical: 120px;
+$fs-sm: 12px;
+$fs-md: 15px;
+
+$padding-vertical-xs: $base * 5;
+$padding-vertical-sm: $base * 15;
+$padding-vertical: $base * 30;
+
+$transition: 0.2s;
 
 $color-divider: #d8e3fe;
+$color-primary: #697ca6;
+$color-secondary: #6188ff;
 // === / Variables ===
 
 // === Common ===
@@ -33,12 +42,38 @@ body {
 
 .section-inner {
   max-width: 900px;
+  margin: 0 auto;
   padding-top: $padding-vertical;
   padding-bottom: $padding-vertical;
-  margin: 0 auto; 
 
   &--wide {
     max-width: 1200px;
+  }
+}
+
+.btn {
+  @include quicksand;
+
+  margin: 0;
+  padding: $base*3 $base*4;
+
+  font-weight: $fw-bold;
+  font-size: $fs-sm;
+  text-decoration: none;
+
+  background-color: none;
+
+  border: 0;
+  border-radius: 2px;
+
+  &--primary {
+    color: #3a79ff;
+
+    background-color: #d2e1ff;
+
+    &:hover {
+      background-color: darken(#d2e1ff, 5%);
+    }
   }
 }
 // === / Common ===
@@ -49,6 +84,97 @@ body {
     padding-top: $padding-vertical-xs;
     padding-bottom: $padding-vertical-xs;
   }
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: $base * 6;
+  height: $base * 6;
+
+  background-color: #5e81fe;
+
+  border-radius: 100%;
+}
+
+.nav {
+  margin-left: $base * 18;
+}
+
+.nav-wrapper {
+  display: flex;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  &__item {
+    & + & {
+      margin-left: $base * 10;
+    }
+
+    &-link {
+      @include quicksand;
+      color: $color-primary;
+
+      font-weight: $fw-medium;
+      font-size: $fs-sm;
+      text-decoration: none;
+
+      transition: $transition;
+
+      &:hover {
+        color: $color-secondary;
+      }
+
+      &--active {
+        color: $color-secondary;
+        font-weight: $fw-bold;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.socials {
+  margin-left: auto;
+}
+
+.socials-wrapper {
+  display: flex;
+  align-items: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  &__item {
+    & + & {
+      margin-left: $base * 10;
+    }
+
+    &-link {
+      path {
+        transition: $transition;
+
+        fill: $color-primary;
+      }
+
+      &:hover {
+        path {
+          fill: $color-secondary;
+        }
+      }
+    }
+  }
+}
+
+.btn-wrapper {
+  margin-left: $base * 11;
 }
 // === / header ===
 
@@ -119,6 +245,7 @@ body {
 // === footer ===
 .section-footer {
   border-bottom: 0;
+
   .section-inner {
     padding-top: $padding-vertical-xs;
     padding-bottom: $padding-vertical-xs;
