@@ -9,7 +9,8 @@ sass.compiler = require('node-sass');
 
 const paths = {
   scss: './src/scss/*.{scss, sass}',
-  copy: './src/*.html',
+  copyHtml: './src/*.html',
+  copyCss: './src/css/*.css',
 }
  
 const scssTask = () => (
@@ -20,8 +21,11 @@ const scssTask = () => (
     .pipe(dest('./dist/css'))
 );
 
-const copyFiles = () => src(paths.copy)
+const copyHTML = () => src(paths.copyHtml)
   .pipe(dest('./dist'))
+
+  const copyCSS = () => src(paths.copyCss)
+  .pipe(dest('./dist/css'))
 
 const watchTask = () => {
   watch(paths.scss, ['sass']);
@@ -29,5 +33,6 @@ const watchTask = () => {
 
 exports.default = series(
   scssTask,
-  copyFiles,
+  copyHTML,
+  copyCSS,
 )
