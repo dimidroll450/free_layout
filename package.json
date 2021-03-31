@@ -1,0 +1,26 @@
+{
+  "name": "freebie",
+  "version": "1.0.0",
+  "description": "clean and simple w",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dmitry kvashchauskas",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "htmlhint": "^0.14.2",
+    "node-sass": "^5.0.0",
+    "stylelint": "^13.12.0",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^21.0.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.19.0",
+    "surge": "^0.22.1"
+  }
+}
