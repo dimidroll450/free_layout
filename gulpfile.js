@@ -12,7 +12,7 @@ const paths = {
   scss: './src/scss/**/*.{scss, sass}',
   copyHtml: './src/*.html',
   copyCss: './src/css/*.css',
-  copyImages: './src/images/*.{png, svg}',
+  copyImages: './src/images/*',
 };
  
 const scssTask = () => (

@@ -325,14 +325,33 @@ h5 {
 }
 // === / hero-image ===
 
-// === cutomers ===
+// === customers ===
 .section-customers {
   .section-inner {
     padding-top: $padding-vertical-sm;
     padding-bottom: $padding-vertical-sm;
   }
 }
-// === / cutomers ===
+
+.companies {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: $padding-vertical-sm;
+  padding-bottom: $padding-vertical-sm;
+
+  &__item {
+    opacity: 0.2;
+
+    transition: $transition;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+// === / customers ===
 
 // === plan-and-manage ===
 .section-plan-and-manage {
@@ -388,8 +407,8 @@ h5 {
   border-bottom: 0;
 
   .section-inner {
-    padding-top: $padding-vertical-xs;
-    padding-bottom: $padding-vertical-xs;
+    padding-top: $padding-vertical-sm;
+    padding-bottom: $padding-vertical-sm;
   }
 }
 
