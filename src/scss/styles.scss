@@ -103,6 +103,7 @@ body {
 
   &--danger {
     color: #d43f3f;
+
     background-color: #ffd7d7;
 
     &:hover {
@@ -155,6 +156,7 @@ h3 {
 
 h4 {
   margin-bottom: $base * 20;
+
   font-size: 24px;
 }
 
@@ -448,12 +450,14 @@ h5 {
   justify-content: space-around;
   margin: 0 0 $base*25;
   padding: 0;
-  
+
   text-align: center;
+
   list-style: none;
-  
+
   &__item {
     position: relative;
+
     flex-basis: 25%;
 
     &:not(:first-child) {
@@ -465,21 +469,23 @@ h5 {
       top: 120px;
       left: -34px;
 
-      height: 1px;
       width: $base * 7;
+      height: 1px;
 
       background-color: #dae4fe;
+
       content: '';
     }
-    
+
     &-icon {
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin: 0 auto $base*8;
+      justify-content: center;
 
       width: $base * 17;
       height: $base * 17;
+
+      margin: 0 auto $base*8;
 
       background-color: #f1f5ff;
 
@@ -488,10 +494,11 @@ h5 {
 
     &-title {
       margin-bottom: $base * 7;
-      font-weight: $fw-bold;
-      font-style: $fs-md;
 
       color: #4074f8;
+
+      font-weight: $fw-bold;
+      font-style: $fs-md;
     }
 
     &-text {
@@ -504,6 +511,7 @@ h5 {
   display: inline-flex;
   align-items: center;
   margin: 0 $base*4;
+
   font-weight: $fw-medium;
   font-style: $fs-sm;
 
