@@ -69,6 +69,24 @@ body {
   }
 }
 
+.input {
+  padding: $base*3 $base*4;
+
+  color: #7a85ad;
+  font-weight: $fw-bold;
+  font-size: $fs-sm;
+
+  background-color: #efeff7;
+  border: 1px solid transparent;
+  border-radius: 2px;
+
+  &--size-lg {
+    padding: $base*5 $base*6;
+
+    border-radius: 5px;
+  }
+}
+
 .btn {
   @include quicksand;
 
@@ -86,6 +104,13 @@ body {
   border: 0;
   border-radius: 2px;
   box-shadow: border-box;
+  cursor: pointer;
+
+  &--size-lg {
+    padding: $base*5 $base*15;
+
+    border-radius: 5px;
+  }
 
   &--primary {
     color: #3a79ff;
@@ -987,6 +1012,48 @@ h5 {
 // === newsletter ===
 .section-newsletter {
   background-color: #fcfdff;
+
+  .section-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    flex-basis: 35%;
+
+    &-title {
+      @include quicksand();
+
+      margin-bottom: $base * 4;
+
+      color: #3d4f9f;
+
+      font-weight: $fw-bold;
+      font-size: $fs-lg;
+    }
+
+    &-text {
+
+      font-size: $fs-md;
+      line-height: 2;
+    }
+  }
+
+  &__right {
+    flex-basis: 55%;
+  }
+
+  .form-newsletter {
+    display: flex;
+
+    input {
+      flex-grow: 1;
+    }
+
+    .btn {
+      margin-left: $base * 3;
+    }
+  }
 }
 // === / newsletter ===
 
