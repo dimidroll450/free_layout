@@ -105,6 +105,16 @@ body {
     &:hover {
       background-color: darken(#4c85ff, 5%);
     }
+
+    &-inverted {
+      color: #565f82;
+
+      background-color: #fff;
+
+      &:hover {
+        background-color: darken(#fff, 5%);
+      }
+    }
   }
 
   &--disabled {
@@ -116,6 +126,18 @@ body {
       color: darken(#adb4d2, 10%);
 
       border: 1px solid darken(#d1d1e4, 10%);
+    }
+
+    &-inverted {
+      color: #c7d3ff;
+
+      border: 1px solid #a0b4ff;
+
+      &:hover {
+        color: lighten(#c7d3ff, 10%);
+
+        border: 1px solid lighten(#a0b4ff, 10%);
+      }
     }
   }
 
@@ -362,7 +384,7 @@ h5 {
       }
 
       .text {
-        width: 60%;
+        max-width: 60%;
         margin: 0 auto $base*5;
 
         line-height: 2;
@@ -917,7 +939,48 @@ h5 {
 
 // === get-started ===
 .section-get-started {
-  background-color: #6888ff;
+  position: relative;
+
+  color: #fff;
+  text-align: center;
+
+  background: linear-gradient(#6888ff, #5e80ff);
+
+  &::before {
+    @include size-zero();
+
+    position: absolute;
+    z-index: 5;
+
+    background: url(./../images/bg-clouds.svg) no-repeat 50% 50%;
+
+    content: '';
+  }
+
+  .section-inner {
+    position: relative;
+    z-index: 10;
+  }
+
+  h2,
+  h5 {
+    color: #fff;
+  }
+
+  h2 {
+    font-weight: $fw-light;
+
+    span {
+      font-weight: $fw-medium;
+    }
+  }
+
+  .text {
+    max-width: 60%;
+    margin: 0 auto $base*10;
+
+    line-height: 2;
+  }
 }
 // === / get-started ===
 
