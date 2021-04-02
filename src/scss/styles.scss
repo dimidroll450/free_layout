@@ -20,6 +20,7 @@ $fw-light: 300;
 
 $fs-sm: 12px;
 $fs-md: 15px;
+$fs-lg: 18px;
 
 $padding-vertical-xs: $base * 5;
 $padding-vertical-sm: $base * 15;
@@ -538,11 +539,56 @@ h5 {
 
 // === stats ===
 .section-stats {
+  display: flex;
+
   background-color: #e9efff;
 
-  .section-inner {
-    padding-top: $padding-vertical-xs;
-    padding-bottom: $padding-vertical-xs;
+  &__left,
+  &__right {
+    @include quicksand;
+
+    display: flex;
+    flex-basis: 50%;
+    flex-direction: column;
+    padding: $base*16 $base*22;
+
+    &-icon {
+      margin-bottom: $base * 6;
+    }
+
+    &-title {
+      margin-bottom: $base * 7;
+    }
+
+    &-text {
+      width: 50%;
+
+      font-weight: $fw-regular;
+      font-size: $fs-lg;
+      line-height: 1.5;
+    }
+  }
+
+  &__left {
+    align-items: flex-end;
+
+    color: #fff;
+
+    text-align: right;
+
+    background-color: #6888ff;
+
+    h2 {
+      color: #fff;
+    }
+  }
+
+  &__right {
+    color: #5e80ff;
+
+    h2 {
+      color: #5e80ff;
+    }
   }
 }
 // === / stats ===
