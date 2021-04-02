@@ -100,6 +100,15 @@ body {
       border: 1px solid darken(#d1d1e4, 10%);
     }
   }
+
+  &--danger {
+    color: #d43f3f;
+    background-color: #ffd7d7;
+
+    &:hover {
+      background-color: darken(#ffd7d7, 5%);
+    }
+  }
 }
 
 .btn-group {
@@ -145,6 +154,7 @@ h3 {
 }
 
 h4 {
+  margin-bottom: $base * 20;
   font-size: 24px;
 }
 
@@ -425,7 +435,97 @@ h5 {
 // === / plan-and-manage ===
 
 // === features ===
-.section-features {}
+.section-features {
+  background: url(./../images/clouds.png) no-repeat 50% 50%;
+
+  h4 {
+    font-weight: $fw-medium;
+  }
+}
+
+.features-list {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 0 $base*25;
+  padding: 0;
+  
+  text-align: center;
+  list-style: none;
+  
+  &__item {
+    position: relative;
+    flex-basis: 25%;
+
+    &:not(:first-child) {
+      margin-left: $base * 10;
+    }
+
+    &:not(:first-child)::before {
+      position: absolute;
+      top: 120px;
+      left: -34px;
+
+      height: 1px;
+      width: $base * 7;
+
+      background-color: #dae4fe;
+      content: '';
+    }
+    
+    &-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto $base*8;
+
+      width: $base * 17;
+      height: $base * 17;
+
+      background-color: #f1f5ff;
+
+      border-radius: 100%;
+    }
+
+    &-title {
+      margin-bottom: $base * 7;
+      font-weight: $fw-bold;
+      font-style: $fs-md;
+
+      color: #4074f8;
+    }
+
+    &-text {
+      line-height: 2;
+    }
+  }
+}
+
+.or-block {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 $base*4;
+  font-weight: $fw-medium;
+  font-style: $fs-sm;
+
+  &::before,
+  &::after {
+    display: block;
+    width: $base * 4;
+    height: 1px;
+
+    background-color: #dae4fe;
+
+    content: '';
+  }
+
+  &::before {
+    margin-right: $base * 4;
+  }
+
+  &::after {
+    margin-left: $base * 4;
+  }
+}
 // === / features ===
 
 // === stats ===
