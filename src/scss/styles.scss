@@ -42,16 +42,56 @@ $padding-vertical: $base * 30;
 
 $transition: 0.2s;
 
+// === Colors ===
 $color-divider: #d8e3fe;
-$color-primary: #697ca6;
-$color-secondary: #6188ff;
+$color-white: #fff;
+
+// Red
+$color-danger-400: #ffd7d7;
+$color-danger-500: #ff3535;
+$color-danger-600: #d43f3f;
+
+// Cian
+$color-cian-500: #35aaff;
+
+// Yellow
+$color-warning-500: #ffc735;
+
+// Gray
+$color-primary-50: #f5f8ff;
+$color-primary-100: #c7d3ff;
+$color-primary-200: #aeb8d0;
+$color-primary-300: #adb4d2;
+$color-primary-400: #8e96b7;
+$color-primary-500: #8d96bd;
+$color-primary-600: #7382a3;
+$color-primary-700: #7a85ad;
+$color-primary-800: #676f95;
+$color-primary-900: #495274;;
+
+// Blue
+$color-secondary-50: #e9efff;
+$color-secondary-100: #6888ff;
+$color-secondary-200: #6188ff;
+$color-secondary-300: #5e80ff;
+$color-secondary-400: #5e81fe;
+$color-secondary-500: #4c85ff;
+$color-secondary-600: #5283ff;
+$color-secondary-700: #3a79ff;
+$color-secondary-800: #4074f8;
+$color-secondary-900: #3d4f9f;
+
+// === / Colors ===
+
+$br-sm: $base/2;
+$br-md: $base;
 // === / Variables ===
 
 // === Common ===
 body {
   @include roboto;
 
-  color: #8d96bd;
+  color: $color-primary-500;
 }
 
 .section-outer {
@@ -72,18 +112,18 @@ body {
 .input {
   padding: $base*3 $base*4;
 
-  color: #7a85ad;
+  color: $color-primary-700;
   font-weight: $fw-bold;
   font-size: $fs-sm;
 
-  background-color: #efeff7;
+  background-color: $color-secondary-50;
   border: 1px solid transparent;
-  border-radius: 2px;
+  border-radius: $br-sm;
 
   &--size-lg {
     padding: $base*5 $base*6;
 
-    border-radius: 5px;
+    border-radius: $br-md;
   }
 }
 
@@ -102,87 +142,87 @@ body {
   background: none;
 
   border: 0;
-  border-radius: 2px;
+  border-radius: $br-sm;
   box-shadow: border-box;
   cursor: pointer;
 
   &--size-lg {
     padding: $base*5 $base*15;
 
-    border-radius: 5px;
+    border-radius: $br-md;
   }
 
   &--primary {
-    color: #3a79ff;
+    color: $color-secondary-700;
 
-    background-color: #d2e1ff;
+    background-color: $color-primary-100;
 
     &:hover {
-      background-color: darken(#d2e1ff, 5%);
+      background-color: darken($color-primary-100, 5%);
     }
   }
 
   &--secondary {
-    color: #fff;
+    color: $color-white;
 
-    background-color: #4c85ff;
+    background-color: $color-secondary-500;
 
     &:hover {
-      background-color: darken(#4c85ff, 5%);
+      background-color: darken($color-secondary-500, 5%);
     }
 
     &-inverted {
       color: #565f82;
 
-      background-color: #fff;
+      background-color: $color-white;
 
       &:hover {
-        background-color: darken(#fff, 5%);
+        background-color: darken($color-white, 5%);
       }
     }
   }
 
   &--disabled {
-    color: #adb4d2;
+    color: $color-primary-300;
 
-    border: 1px solid #d1d1e4;
+    border: 1px solid $color-primary-100;
 
     &:hover {
-      color: darken(#adb4d2, 10%);
+      color: darken($color-primary-300, 10%);
 
-      border: 1px solid darken(#d1d1e4, 10%);
+      border: 1px solid darken($color-primary-100, 10%);
     }
 
     &-inverted {
-      color: #c7d3ff;
+      color: $color-primary-100;
 
-      border: 1px solid #a0b4ff;
+      border: 1px solid $color-secondary-50;
 
       &:hover {
-        color: lighten(#c7d3ff, 10%);
+        color: lighten($color-primary-100, 10%);
 
-        border: 1px solid lighten(#a0b4ff, 10%);
+        border: 1px solid lighten($color-secondary-50, 10%);
       }
     }
   }
 
   &--danger {
-    color: #d43f3f;
+    color: $color-danger-600;
 
-    background-color: #ffd7d7;
+    background-color: $color-danger-400;
 
     &:hover {
-      background-color: darken(#ffd7d7, 5%);
+      background-color: darken($color-danger-400, 5%);
     }
   }
 
   &--grayscale {
-    color: #7382a3;
+    color: $color-primary-600;
 
-    background-color: #e8ecf4;
+    background-color: $color-primary-50;
 
     &:hover {
-      background-color: darken(#e8ecf4, 5%);
+      background-color: darken($color-primary-50, 5%);
     }
   }
 }
@@ -212,11 +252,10 @@ h6 {
   margin: 0;
   padding: 0;
 
-  color: #3d4f9f;
+  color: $color-secondary-900;
   font-weight: $fw-regular;
 }
 
-h1,
 h2 {
   margin-bottom: $base * 7;
 
@@ -262,18 +301,30 @@ h5 {
     width: $base * 2;
     height: $base * 2;
 
-    background-color: #d1d6e3;
+    background-color: $color-primary-100;
     border-radius: 100%;
     cursor: pointer;
 
     &--active {
-      background-color: #5283ff;
+      background-color: $color-secondary-600;
     }
 
     & + & {
       margin-left: $base * 3;
     }
   }
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
 }
 // === / Common ===
 
@@ -291,12 +342,17 @@ h5 {
 }
 
 .logo {
-  width: $base * 6;
-  height: $base * 6;
 
-  background-color: #5e81fe;
 
-  border-radius: 100%;
+  &__link {
+    display: block;
+    width: $base * 6;
+    height: $base * 6;
+
+    background-color: $color-secondary-400;
+
+    border-radius: 100%;
+  }
 }
 
 .nav {
@@ -315,7 +371,7 @@ h5 {
 
     &-link {
       @include quicksand;
-      color: $color-primary;
+      color: $color-primary-900;
 
       font-weight: $fw-medium;
       font-size: $fs-sm;
@@ -324,11 +380,11 @@ h5 {
       transition: $transition;
 
       &:hover {
-        color: $color-secondary;
+        color: $color-secondary-200;
       }
 
       &--active {
-        color: $color-secondary;
+        color: $color-secondary-200;
         font-weight: $fw-bold;
         text-decoration: none;
       }
@@ -355,12 +411,12 @@ h5 {
       path {
         transition: $transition;
 
-        fill: $color-primary;
+        fill: $color-primary-900;
       }
 
       &:hover {
         path {
-          fill: $color-secondary;
+          fill: $color-secondary-200;
         }
       }
     }
@@ -376,7 +432,7 @@ h5 {
 .section-hero-image {
   position: relative;
 
-  background-color: #f4f7ff;
+  background-color: lighten(#d8e0f7, 5%);
 
   .dots {
     position: absolute;
@@ -425,9 +481,9 @@ h5 {
   width: $base * 13;
   height: $base * 13;
 
-  background-color: #fff;
+  background-color: $color-white;
   border-radius: 100%;
-  box-shadow: 0 10px 50px rgba(#c9d1e7, 0.6);
+  box-shadow: 0 $base*2 $base*12 rgba(#c9d1e7, 0.6);
 
   svg {
     width: $base * 3;
@@ -466,7 +522,7 @@ h5 {
 
 // === plan-and-manage ===
 .section-plan-and-manage {
-  background-color: #f5f8ff;
+  background-color: $color-primary-50;
 
   &__content {
     position: relative;
@@ -475,8 +531,8 @@ h5 {
 
     .aside-image {
       position: absolute;
-      top: -20%;
-      left: 70%;
+      top: 0;
+      left: 100%;
     }
 
     h3 {
@@ -521,23 +577,26 @@ h5 {
   text-align: center;
 
   &__item {
+    $margin-left: $base * 10;
+    $divider-width: $base * 7;
+
     position: relative;
 
     flex-basis: 25%;
 
     &:not(:first-child) {
-      margin-left: $base * 10;
+      margin-left: $margin-left;
     }
 
     &:not(:first-child)::before {
       position: absolute;
-      top: 120px;
-      left: -34px;
+      top: $base * 30;
+      left: -$divider-width - ($margin-left - $divider-width)/2;
 
-      width: $base * 7;
+      width: $divider-width;
       height: 1px;
 
-      background-color: #dae4fe;
+      background-color: $color-primary-100;
 
       content: '';
     }
@@ -552,7 +611,7 @@ h5 {
 
       margin: 0 auto $base*8;
 
-      background-color: #f1f5ff;
+      background-color: $color-primary-50;
 
       border-radius: 100%;
     }
@@ -560,13 +619,14 @@ h5 {
     &-title {
       margin-bottom: $base * 7;
 
-      color: #4074f8;
+      color: $color-secondary-800;
 
       font-weight: $fw-bold;
       font-style: $fs-md;
     }
 
     &-text {
+      font-style: $fs-sm;
       line-height: 2;
     }
   }
@@ -586,7 +646,7 @@ h5 {
     width: $base * 4;
     height: 1px;
 
-    background-color: #dae4fe;
+    background-color: $color-primary-100;
 
     content: '';
   }
@@ -605,7 +665,7 @@ h5 {
 .section-stats {
   display: flex;
 
-  background-color: #e9efff;
+  background-color: $color-secondary-50;
 
   &__left,
   &__right {
@@ -636,22 +696,22 @@ h5 {
   &__left {
     align-items: flex-end;
 
-    color: #fff;
+    color: $color-white;
 
     text-align: right;
 
-    background-color: #6888ff;
+    background-color: $color-secondary-100;
 
     h2 {
-      color: #fff;
+      color: $color-white;
     }
   }
 
   &__right {
-    color: #5e80ff;
+    color: $color-secondary-300;
 
     h2 {
-      color: #5e80ff;
+      color: $color-secondary-300;
     }
   }
 }
@@ -659,7 +719,11 @@ h5 {
 
 // === blog ===
 .section-blog {
-  background-color: #f5f8ff;
+  background-color: $color-primary-50;
+
+  h4 {
+    font-weight: $fw-medium;
+  }
 }
 
 .slider-wrapper {
@@ -671,9 +735,9 @@ h5 {
 .slider-blog {
   @include list-null();
 
-  background-color: #fff;
-  border: 1px solid #d8e3fe;
-  box-shadow: 0 15px 50px #eff4ff;
+  background-color: $color-white;
+  border: 1px solid $color-primary-100;
+  box-shadow: 0 $base*3 $base*12 $color-primary-100;
 
   &__item {
     display: flex;
@@ -686,9 +750,9 @@ h5 {
 
     &-gallery {
       display: grid;
-      grid-gap: 12px;
-      grid-template-rows: repeat(2, 120px);
-      grid-template-columns: repeat(3, 120px);
+      grid-gap: $base * 3;
+      grid-template-rows: repeat(2, $base*30);
+      grid-template-columns: repeat(3, $base*30);
 
       .image-link {
         position: relative;
@@ -696,8 +760,8 @@ h5 {
         display: block;
         overflow: hidden;
 
-        border-radius: 5px;
-        box-shadow: 0 15px 100px #e5ebf8;
+        border-radius: $br-md;
+        box-shadow: 0 $base*4 $base*25 $color-primary-50;
 
         .loupe {
           position: absolute;
@@ -710,7 +774,7 @@ h5 {
           width: $base * 16;
           height: $base * 16;
 
-          background: #fff url(../images/blog/loupe.svg) no-repeat 50% 50%;
+          background: $color-white url(../images/blog/loupe.svg) no-repeat 50% 50%;
           border-radius: 100%;
 
           transform: translate(-50%, -50%);
@@ -746,7 +810,7 @@ h5 {
           grid-column: 1 / 3;
 
           &::before {
-            background: linear-gradient(transparent, #ffc735);
+            background: linear-gradient(transparent, $color-warning-500);
 
             content: '';
           }
@@ -757,7 +821,7 @@ h5 {
           grid-column: 3 / 4;
 
           &::before {
-            background: linear-gradient(transparent, #ff3535);
+            background: linear-gradient(transparent, $color-danger-500);
 
             content: '';
           }
@@ -768,7 +832,7 @@ h5 {
           grid-column: 3 / 4;
 
           &::before {
-            background: linear-gradient(transparent, #35aaff);
+            background: linear-gradient(transparent, $color-cian-500);
 
             content: '';
           }
@@ -819,7 +883,7 @@ h5 {
 
 // === quotes ===
 .section-quotes {
-  background: linear-gradient(#eaebff, #f6f9ff);
+  background: linear-gradient(#eaebff, $color-primary-50);
 
   .section-inner {
     display: flex;
@@ -850,14 +914,14 @@ h5 {
   &__item {
     position: relative;
 
-    background-color: #fff;
+    background-color: $color-white;
     border: 1px solid #d8e3fe;
-    box-shadow: 0 5px 50px #f3f5fa;
+    box-shadow: 0 $base $base*12 $color-primary-50;
 
     &-text {
       padding: $base*10 $base*17 $base*15;
 
-      color: #676f95;
+      color: $color-primary-800;
       font-style: $fs-md;
       line-height: 2;
     }
@@ -874,9 +938,9 @@ h5 {
       margin-top: -$height/2;
       overflow: hidden;
 
-      background-color: #fff;
+      background-color: $color-white;
 
-      border-radius: 100px;
+      border-radius: $base * 25;
       transform: translateX(-50%);
     }
   }
@@ -896,15 +960,15 @@ h5 {
   &__item {
     $parent: &;
 
-    border-bottom: 1px solid #d8e3fe;
+    border-bottom: 1px solid $color-primary-100;
 
     &--active {
       .arrow {
-        stroke: #495274;
+        stroke: $color-primary-900;
       }
 
       #{$parent}-trigger {
-        color: #495274;
+        color: $color-primary-900;
         font-weight: $fw-bold;
 
         &-icon {
@@ -933,7 +997,7 @@ h5 {
         transform: rotate(180deg);
 
         .arrow {
-          stroke: #8e96b7;
+          stroke: $color-primary-400;
         }
       }
 
@@ -966,10 +1030,10 @@ h5 {
 .section-get-started {
   position: relative;
 
-  color: #fff;
+  color: $color-white;
   text-align: center;
 
-  background: linear-gradient(#6888ff, #5e80ff);
+  background: linear-gradient($color-secondary-100, $color-secondary-300);
 
   &::before {
     @include size-zero();
@@ -989,7 +1053,7 @@ h5 {
 
   h2,
   h5 {
-    color: #fff;
+    color: $color-white;
   }
 
   h2 {
@@ -1011,7 +1075,7 @@ h5 {
 
 // === newsletter ===
 .section-newsletter {
-  background-color: #fcfdff;
+  background: linear-gradient($color-primary-50, $color-white);
 
   .section-inner {
     display: flex;
@@ -1026,7 +1090,7 @@ h5 {
 
       margin-bottom: $base * 4;
 
-      color: #3d4f9f;
+      color: $color-secondary-900;
 
       font-weight: $fw-bold;
       font-size: $fs-lg;
@@ -1073,7 +1137,7 @@ h5 {
   margin-top: $base * 7;
   margin-left: $base * 24;
 
-  color: #aeb8d0;
+  color: $color-primary-200;
   font-weight: $fw-medium;
   font-size: $fs-sm;
 }
