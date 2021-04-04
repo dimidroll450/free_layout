@@ -27,14 +27,18 @@
 // === Variables ===
 $base: 4px;
 
-$fw-bold: 700;
-$fw-medium: 500;
-$fw-regular: 400;
 $fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-bold: 700;
 
-$fs-sm: 12px;
-$fs-md: 15px;
-$fs-lg: 18px;
+$fs-xxs: 10px;
+$fs-xs: 12px;
+$fs-s: 15px;
+$fs-m: 18px;
+$fs-l: 24px;
+$fs-xl: 36px;
+$fs-xxl: 48px;
 
 $padding-vertical-xs: $base * 5;
 $padding-vertical-sm: $base * 15;
@@ -47,39 +51,39 @@ $color-divider: #d8e3fe;
 $color-white: #fff;
 
 // Red
-$color-danger-400: #ffd7d7;
-$color-danger-500: #ff3535;
-$color-danger-600: #d43f3f;
+$color-red-400: #ffd7d7;
+$color-red-500: #ff3535;
+$color-red-600: #d43f3f;
 
 // Cian
 $color-cian-500: #35aaff;
 
 // Yellow
-$color-warning-500: #ffc735;
+$color-yellow-500: #ffc735;
 
 // Gray
-$color-primary-50: #f5f8ff;
-$color-primary-100: #c7d3ff;
-$color-primary-200: #aeb8d0;
-$color-primary-300: #adb4d2;
-$color-primary-400: #8e96b7;
-$color-primary-500: #8d96bd;
-$color-primary-600: #7382a3;
-$color-primary-700: #7a85ad;
-$color-primary-800: #676f95;
-$color-primary-900: #495274;;
+$color-gray-50: #f5f8ff;
+$color-gray-100: #c7d3ff;
+$color-gray-200: #aeb8d0;
+$color-gray-300: #adb4d2;
+$color-gray-400: #8e96b7;
+$color-gray-500: #8d96bd;
+$color-gray-600: #7382a3;
+$color-gray-700: #7a85ad;
+$color-gray-800: #676f95;
+$color-gray-900: #495274;
 
 // Blue
-$color-secondary-50: #e9efff;
-$color-secondary-100: #6888ff;
-$color-secondary-200: #6188ff;
-$color-secondary-300: #5e80ff;
-$color-secondary-400: #5e81fe;
-$color-secondary-500: #4c85ff;
-$color-secondary-600: #5283ff;
-$color-secondary-700: #3a79ff;
-$color-secondary-800: #4074f8;
-$color-secondary-900: #3d4f9f;
+$color-blue-50: #e9efff;
+$color-blue-100: #6888ff;
+$color-blue-200: #6188ff;
+$color-blue-300: #5e80ff;
+$color-blue-400: #5e81fe;
+$color-blue-500: #4c85ff;
+$color-blue-600: #5283ff;
+$color-blue-700: #3a79ff;
+$color-blue-800: #4074f8;
+$color-blue-900: #3d4f9f;
 
 // === / Colors ===
 
@@ -91,7 +95,7 @@ $br-md: $base;
 body {
   @include roboto;
 
-  color: $color-primary-500;
+  color: $color-gray-500;
 }
 
 .section-outer {
@@ -112,11 +116,11 @@ body {
 .input {
   padding: $base*3 $base*4;
 
-  color: $color-primary-700;
+  color: $color-gray-700;
   font-weight: $fw-bold;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
 
-  background-color: $color-secondary-50;
+  background-color: $color-blue-50;
   border: 1px solid transparent;
   border-radius: $br-sm;
 
@@ -135,7 +139,7 @@ body {
   padding: $base*3 $base*4;
 
   font-weight: $fw-bold;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
   white-space: nowrap;
   text-decoration: none;
 
@@ -153,22 +157,22 @@ body {
   }
 
   &--primary {
-    color: $color-secondary-700;
+    color: $color-blue-700;
 
-    background-color: $color-primary-100;
+    background-color: $color-gray-100;
 
     &:hover {
-      background-color: darken($color-primary-100, 5%);
+      background-color: darken($color-gray-100, 5%);
     }
   }
 
   &--secondary {
     color: $color-white;
 
-    background-color: $color-secondary-500;
+    background-color: $color-blue-500;
 
     &:hover {
-      background-color: darken($color-secondary-500, 5%);
+      background-color: darken($color-blue-500, 5%);
     }
 
     &-inverted {
@@ -183,46 +187,46 @@ body {
   }
 
   &--disabled {
-    color: $color-primary-300;
+    color: $color-gray-300;
 
-    border: 1px solid $color-primary-100;
+    border: 1px solid $color-gray-100;
 
     &:hover {
-      color: darken($color-primary-300, 10%);
+      color: darken($color-gray-300, 10%);
 
-      border: 1px solid darken($color-primary-100, 10%);
+      border: 1px solid darken($color-gray-100, 10%);
     }
 
     &-inverted {
-      color: $color-primary-100;
+      color: $color-gray-100;
 
-      border: 1px solid $color-secondary-50;
+      border: 1px solid $color-blue-50;
 
       &:hover {
-        color: lighten($color-primary-100, 10%);
+        color: lighten($color-gray-100, 10%);
 
-        border: 1px solid lighten($color-secondary-50, 10%);
+        border: 1px solid lighten($color-blue-50, 10%);
       }
     }
   }
 
   &--danger {
-    color: $color-danger-600;
+    color: $color-red-600;
 
-    background-color: $color-danger-400;
+    background-color: $color-red-400;
 
     &:hover {
-      background-color: darken($color-danger-400, 5%);
+      background-color: darken($color-red-400, 5%);
     }
   }
 
   &--grayscale {
-    color: $color-primary-600;
+    color: $color-gray-600;
 
-    background-color: $color-primary-50;
+    background-color: $color-gray-50;
 
     &:hover {
-      background-color: darken($color-primary-50, 5%);
+      background-color: darken($color-gray-50, 5%);
     }
   }
 }
@@ -252,34 +256,26 @@ h6 {
   margin: 0;
   padding: 0;
 
-  color: $color-secondary-900;
   font-weight: $fw-regular;
 }
 
+.section-subtitle {
+  @include quicksand;
+
+  margin-bottom: $base * 7;
+
+  color: $color-blue-900;
+  font-size: $fs-xxl;
+}
+
 h2 {
-  margin-bottom: $base * 7;
-
-  font-size: 48px;
-}
-
-h3 {
-  margin-bottom: $base * 7;
-
-  font-size: 36px;
-}
-
-h4 {
-  margin-bottom: $base * 20;
-
-  font-size: 24px;
-}
-
-h5 {
   @include roboto;
 
   margin-bottom: $base * 4;
 
-  font-size: 10px;
+  color: $color-blue-900;
+
+  font-size: $fs-xxs;
   text-transform: uppercase;
 }
 
@@ -301,12 +297,12 @@ h5 {
     width: $base * 2;
     height: $base * 2;
 
-    background-color: $color-primary-100;
+    background-color: $color-gray-100;
     border-radius: 100%;
     cursor: pointer;
 
     &--active {
-      background-color: $color-secondary-600;
+      background-color: $color-blue-600;
     }
 
     & + & {
@@ -323,7 +319,9 @@ h5 {
   margin: -1px;
   padding: 0;
   overflow: hidden;
+
   border: 0;
+
   clip: rect(0 0 0 0);
 }
 // === / Common ===
@@ -342,14 +340,12 @@ h5 {
 }
 
 .logo {
-
-
   &__link {
     display: block;
     width: $base * 6;
     height: $base * 6;
 
-    background-color: $color-secondary-400;
+    background-color: $color-blue-400;
 
     border-radius: 100%;
   }
@@ -371,20 +367,20 @@ h5 {
 
     &-link {
       @include quicksand;
-      color: $color-primary-900;
+      color: $color-gray-900;
 
       font-weight: $fw-medium;
-      font-size: $fs-sm;
+      font-size: $fs-xs;
       text-decoration: none;
 
       transition: $transition;
 
       &:hover {
-        color: $color-secondary-200;
+        color: $color-blue-200;
       }
 
       &--active {
-        color: $color-secondary-200;
+        color: $color-blue-200;
         font-weight: $fw-bold;
         text-decoration: none;
       }
@@ -411,12 +407,12 @@ h5 {
       path {
         transition: $transition;
 
-        fill: $color-primary-900;
+        fill: $color-gray-900;
       }
 
       &:hover {
         path {
-          fill: $color-secondary-200;
+          fill: $color-blue-200;
         }
       }
     }
@@ -456,7 +452,7 @@ h5 {
     background-size: cover;
 
     &-content {
-      h2 {
+      .section-subtitle {
         font-weight: $fw-light;
 
         span {
@@ -522,7 +518,7 @@ h5 {
 
 // === plan-and-manage ===
 .section-plan-and-manage {
-  background-color: $color-primary-50;
+  background-color: $color-gray-50;
 
   &__content {
     position: relative;
@@ -535,7 +531,7 @@ h5 {
       left: 100%;
     }
 
-    h3 {
+    .section-subtitle {
       font-weight: $fw-light;
 
       span {
@@ -562,8 +558,9 @@ h5 {
 .section-features {
   background: url(./../images/clouds.png) no-repeat 50% 50%;
 
-  h4 {
+  .section-subtitle {
     font-weight: $fw-medium;
+    font-size: $fs-l;
   }
 }
 
@@ -596,7 +593,7 @@ h5 {
       width: $divider-width;
       height: 1px;
 
-      background-color: $color-primary-100;
+      background-color: $color-gray-100;
 
       content: '';
     }
@@ -611,22 +608,24 @@ h5 {
 
       margin: 0 auto $base*8;
 
-      background-color: $color-primary-50;
+      background-color: $color-gray-50;
 
       border-radius: 100%;
     }
 
     &-title {
+      @include roboto();
+
       margin-bottom: $base * 7;
 
-      color: $color-secondary-800;
+      color: $color-blue-800;
 
       font-weight: $fw-bold;
-      font-style: $fs-md;
+      font-style: $fs-s;
     }
 
     &-text {
-      font-style: $fs-sm;
+      font-size: $fs-xs;
       line-height: 2;
     }
   }
@@ -638,7 +637,7 @@ h5 {
   margin: 0 $base*4;
 
   font-weight: $fw-medium;
-  font-style: $fs-sm;
+  font-style: $fs-xs;
 
   &::before,
   &::after {
@@ -646,7 +645,7 @@ h5 {
     width: $base * 4;
     height: 1px;
 
-    background-color: $color-primary-100;
+    background-color: $color-gray-100;
 
     content: '';
   }
@@ -665,7 +664,7 @@ h5 {
 .section-stats {
   display: flex;
 
-  background-color: $color-secondary-50;
+  background-color: $color-blue-50;
 
   &__left,
   &__right {
@@ -682,13 +681,15 @@ h5 {
 
     &-title {
       margin-bottom: $base * 7;
+
+      font-size: $fs-xxl;
     }
 
     &-text {
       width: 50%;
 
       font-weight: $fw-regular;
-      font-size: $fs-lg;
+      font-size: $fs-m;
       line-height: 1.5;
     }
   }
@@ -700,18 +701,18 @@ h5 {
 
     text-align: right;
 
-    background-color: $color-secondary-100;
+    background-color: $color-blue-100;
 
-    h2 {
+    div {
       color: $color-white;
     }
   }
 
   &__right {
-    color: $color-secondary-300;
+    color: $color-blue-300;
 
-    h2 {
-      color: $color-secondary-300;
+    .section-stats__righ-title {
+      color: $color-blue-300;
     }
   }
 }
@@ -719,10 +720,11 @@ h5 {
 
 // === blog ===
 .section-blog {
-  background-color: $color-primary-50;
+  background-color: $color-gray-50;
 
-  h4 {
+  .section-subtitle {
     font-weight: $fw-medium;
+    font-size: $fs-l;
   }
 }
 
@@ -736,11 +738,12 @@ h5 {
   @include list-null();
 
   background-color: $color-white;
-  border: 1px solid $color-primary-100;
-  box-shadow: 0 $base*3 $base*12 $color-primary-100;
+  border: 1px solid $color-gray-100;
+  box-shadow: 0 $base*3 $base*12 $color-gray-100;
 
   &__item {
     display: flex;
+    justify-content: space-between;
     padding: $base*16 $base*8;
 
     &-gallery,
@@ -761,9 +764,9 @@ h5 {
         overflow: hidden;
 
         border-radius: $br-md;
-        box-shadow: 0 $base*4 $base*25 $color-primary-50;
+        box-shadow: 0 $base*4 $base*25 $color-gray-50;
 
-        .loupe {
+        &::after {
           position: absolute;
 
           top: 50%;
@@ -781,12 +784,12 @@ h5 {
           opacity: 0;
 
           transition: $transition;
+
+          content: '';
         }
 
-        &:hover {
-          .loupe {
-            opacity: 1;
-          }
+        &:hover::after {
+          opacity: 1;
         }
 
         img {
@@ -810,7 +813,7 @@ h5 {
           grid-column: 1 / 3;
 
           &::before {
-            background: linear-gradient(transparent, $color-warning-500);
+            background: linear-gradient(transparent, $color-yellow-500);
 
             content: '';
           }
@@ -821,7 +824,7 @@ h5 {
           grid-column: 3 / 4;
 
           &::before {
-            background: linear-gradient(transparent, $color-danger-500);
+            background: linear-gradient(transparent, $color-red-500);
 
             content: '';
           }
@@ -841,12 +844,17 @@ h5 {
     }
 
     &-content {
-      margin-left: 10%;
+      h3 {
+        margin-bottom: $base * 7;
+
+        color: $color-blue-900;
+        font-size: $fs-xl;
+      }
 
       &-text {
         margin-bottom: $base * 10;
 
-        font-size: $fs-md;
+        font-size: $fs-s;
         line-height: 2;
       }
     }
@@ -883,14 +891,15 @@ h5 {
 
 // === quotes ===
 .section-quotes {
-  background: linear-gradient(#eaebff, $color-primary-50);
+  background: linear-gradient(#eaebff, $color-gray-50);
 
   .section-inner {
     display: flex;
     justify-content: space-between;
 
-    h3 {
+    .section-subtitle {
       font-weight: $fw-medium;
+      font-size: $fs-xl;
     }
   }
 
@@ -916,13 +925,13 @@ h5 {
 
     background-color: $color-white;
     border: 1px solid #d8e3fe;
-    box-shadow: 0 $base $base*12 $color-primary-50;
+    box-shadow: 0 $base $base*12 $color-gray-50;
 
     &-text {
       padding: $base*10 $base*17 $base*15;
 
-      color: $color-primary-800;
-      font-style: $fs-md;
+      color: $color-gray-800;
+      font-style: $fs-s;
       line-height: 2;
     }
 
@@ -935,13 +944,12 @@ h5 {
 
       width: $height;
       height: $height;
-      margin-top: -$height/2;
       overflow: hidden;
 
       background-color: $color-white;
 
       border-radius: $base * 25;
-      transform: translateX(-50%);
+      transform: translate(-50%, -$height/2);
     }
   }
 }
@@ -949,8 +957,11 @@ h5 {
 
 // === faq ===
 .section-faq {
-  h4 {
-    font-weight: $fw-medium;
+  .section-inner {
+    .section-subtitle {
+      font-weight: $fw-medium;
+      font-size: $fs-l;
+    }
   }
 }
 
@@ -960,19 +971,21 @@ h5 {
   &__item {
     $parent: &;
 
-    border-bottom: 1px solid $color-primary-100;
+    border-bottom: 1px solid $color-gray-100;
 
     &--active {
       .arrow {
-        stroke: $color-primary-900;
+        stroke: $color-gray-900;
       }
 
       #{$parent}-trigger {
-        color: $color-primary-900;
-        font-weight: $fw-bold;
-
         &-icon {
           transform: rotate(0);
+        }
+
+        &-text {
+          color: $color-gray-900;
+          font-weight: $fw-bold;
         }
       }
 
@@ -997,12 +1010,12 @@ h5 {
         transform: rotate(180deg);
 
         .arrow {
-          stroke: $color-primary-400;
+          stroke: $color-gray-400;
         }
       }
 
       &-text {
-        font-size: $fs-md;
+        font-size: $fs-s;
       }
     }
 
@@ -1014,7 +1027,7 @@ h5 {
       &-text {
         flex-grow: 1;
 
-        font-size: $fs-md;
+        font-size: $fs-s;
         line-height: 2;
       }
 
@@ -1033,7 +1046,7 @@ h5 {
   color: $color-white;
   text-align: center;
 
-  background: linear-gradient($color-secondary-100, $color-secondary-300);
+  background: linear-gradient($color-blue-100, $color-blue-300);
 
   &::before {
     @include size-zero();
@@ -1049,33 +1062,33 @@ h5 {
   .section-inner {
     position: relative;
     z-index: 10;
-  }
 
-  h2,
-  h5 {
-    color: $color-white;
-  }
-
-  h2 {
-    font-weight: $fw-light;
-
-    span {
-      font-weight: $fw-medium;
+    h2,
+    .section-subtitle {
+      color: $color-white;
     }
-  }
 
-  .text {
-    max-width: 60%;
-    margin: 0 auto $base*10;
+    .section-subtitle {
+      font-weight: $fw-light;
 
-    line-height: 2;
+      span {
+        font-weight: $fw-medium;
+      }
+    }
+
+    .text {
+      max-width: 60%;
+      margin: 0 auto $base*10;
+
+      line-height: 2;
+    }
   }
 }
 // === / get-started ===
 
 // === newsletter ===
 .section-newsletter {
-  background: linear-gradient($color-primary-50, $color-white);
+  background: linear-gradient($color-gray-50, $color-white);
 
   .section-inner {
     display: flex;
@@ -1090,15 +1103,16 @@ h5 {
 
       margin-bottom: $base * 4;
 
-      color: $color-secondary-900;
+      color: $color-blue-900;
 
       font-weight: $fw-bold;
-      font-size: $fs-lg;
+      font-size: $fs-m;
+      text-transform: none;
     }
 
     &-text {
 
-      font-size: $fs-md;
+      font-size: $fs-s;
       line-height: 2;
     }
   }
@@ -1137,8 +1151,8 @@ h5 {
   margin-top: $base * 7;
   margin-left: $base * 24;
 
-  color: $color-primary-200;
+  color: $color-gray-200;
   font-weight: $fw-medium;
-  font-size: $fs-sm;
+  font-size: $fs-xs;
 }
 // === / footer ===
