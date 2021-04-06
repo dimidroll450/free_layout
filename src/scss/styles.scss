@@ -139,30 +139,40 @@ body {
 }
 
 .vertical-indent {
+  @mixin vertical-indent ($size) {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+
   &--s {
-    padding-top: $base * 5;
-    padding-bottom: $base * 5;
+    @include vertical-indent($base * 5);
   }
 
   &--m {
-    padding-top: $base * 15;
-    padding-bottom: $base * 15;
+    @include vertical-indent($base * 15);
   }
 
   &--l {
-    padding-top: $base * 30;
-    padding-bottom: $base * 30;
+    @include vertical-indent($base * 30);
   }
 
   @media (max-width: $breakpoint-md-max) {
     &--m {
-      padding-top: $base * 10;
-      padding-bottom: $base * 10;
+      @include vertical-indent($base * 10);
     }
 
     &--l {
-      padding-top: $base * 15;
-      padding-bottom: $base * 15;
+      @include vertical-indent($base * 15);
+    }
+  }
+
+  @media (max-width: $breakpoint-xs-max) {
+    &--m {
+      @include vertical-indent($base * 5);
+    }
+
+    &--l {
+      @include vertical-indent($base * 10);
     }
   }
 }
@@ -208,6 +218,11 @@ body {
     padding: $base*5 $base*15;
 
     border-radius: $br-md;
+
+    @media (max-width: $breakpoint-xs-max) {
+      padding-right: $base * 5;
+      padding-left: $base * 5;
+    }
   }
 
   &--primary {
@@ -380,11 +395,7 @@ h2 {
 }
 // === / Common ===
 
-// === header ===
-.section-header {
-  position: relative;
-}
-
+// === Navigation ===
 .main-nav {
   display: flex;
   align-items: center;
@@ -441,6 +452,12 @@ h2 {
     }
   }
 }
+// === / Navigation ===
+
+// === header ===
+.section-header {
+  position: relative;
+}
 
 .btn-burger {
   display: none;
@@ -483,6 +500,10 @@ h2 {
   &__item {
     & + & {
       margin-left: $base * 10;
+
+      @media (max-width: $breakpoint-xs-max) {
+        margin-left: 0;
+      }
     }
 
     &-link {
@@ -505,6 +526,11 @@ h2 {
         text-decoration: none;
       }
     }
+  }
+
+  @media (max-width: $breakpoint-xs-max) {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -625,6 +651,19 @@ h2 {
       opacity: 1;
     }
   }
+
+  @media (max-width: $breakpoint-sm-max) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    a {
+      flex-basis: 45%;
+      margin-top: $base * 3;
+      margin-bottom: $base * 3;
+
+      text-align: center;
+    }
+  }
 }
 // === / customers ===
 
@@ -672,6 +711,15 @@ h2 {
         left: 50%;
       }
     }
+
+    @media (max-width: $breakpoint-xs-max) {
+      width: 80%;
+
+      .aside-image {
+        top: 0;
+        left: 75%;
+      }
+    }
   }
 }
 // === / plan-and-manage ===
@@ -695,10 +743,6 @@ h2 {
 
   text-align: center;
 
-  @media (max-width: $breakpoint-md-max) {
-    margin-bottom: $base * 15;
-  }
-
   &__item {
     $margin-left: $base * 10;
     $divider-width: $base * 7;
@@ -707,21 +751,30 @@ h2 {
 
     flex-basis: 25%;
 
-    &:not(:first-child) {
+    & + & {
       margin-left: $margin-left;
-    }
 
-    &:not(:first-child)::before {
-      position: absolute;
-      top: $base * 30;
-      left: -$divider-width - ($margin-left - $divider-width)/2;
+      &::before {
+        position: absolute;
+        top: $base * 30;
+        left: -$divider-width - ($margin-left - $divider-width)/2;
 
-      width: $divider-width;
-      height: 1px;
+        width: $divider-width;
+        height: 1px;
 
-      background-color: $color-gray-100;
+        background-color: $color-gray-100;
 
-      content: '';
+        content: '';
+      }
+
+      @media (max-width: $breakpoint-xs-max) {
+        margin-bottom: $base * 15;
+        margin-left: 0;
+
+        &::before {
+          display: none;
+        }
+      }
     }
 
     &-icon {
@@ -754,6 +807,28 @@ h2 {
       font-size: $fs-xs;
       line-height: 2;
     }
+
+    @media (max-width: $breakpoint-xs-max) {
+      flex-basis: 48%;
+
+      &-icon {
+        margin-bottom: $base * 4;
+      }
+
+      &-title {
+        margin-bottom: $base * 3;
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    margin-bottom: $base * 15;
+  }
+
+  @media (max-width: $breakpoint-xs-max) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: $base * 5;
   }
 }
 
@@ -782,6 +857,10 @@ h2 {
 
   &::after {
     margin-left: $base * 4;
+  }
+
+  @media (max-width: $breakpoint-xs-max) {
+    display: none;
   }
 }
 // === / features ===
@@ -843,6 +922,13 @@ h2 {
 
     .section-stats__righ-title {
       color: $color-blue-300;
+    }
+  }
+
+  @media (max-width: $breakpoint-xs-max) {
+    &__left,
+    &__right {
+      padding: $base*8 $base*10;
     }
   }
 }
@@ -924,7 +1010,7 @@ h2 {
         img {
           width: 100%;
           height: 100%;
-          object-fit: contain;
+          object-fit: cover;
         }
 
         &::before {
@@ -972,9 +1058,25 @@ h2 {
       }
 
       @media (max-width: $breakpoint-md-max) {
-        grid-gap: $base * 2;
-        grid-template-rows: repeat(2, $base*25);
-        grid-template-columns: repeat(3, $base*25);
+        grid-gap: $base*2;
+        grid-template-rows: repeat(1, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+
+        .image-link {
+          grid-row: 1 / 2;
+
+          &--bg {
+            grid-column: 1 / 2;
+          }
+
+          &--sm-1 {
+            grid-column: 2 / 3;
+          }
+
+          &--sm-2 {
+            grid-column: 3 / 4;
+          }
+        }
       }
     }
 
@@ -994,6 +1096,34 @@ h2 {
 
         font-size: $fs-s;
         line-height: 2;
+      }
+    }
+
+    @media (max-width: $breakpoint-md-max) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: $base*6;
+
+      &-gallery {
+        width: 50%;
+      }
+
+      &-content {
+        position: relative;
+        z-index: 10;
+
+        margin-top: $base * 6;
+        margin-left: 0;
+
+        h3 {
+          margin-bottom: $base * 3;
+        }
+      }
+    }
+
+    @media (max-width: $breakpoint-xs-max) {
+      &-gallery {
+        width: 100%;
       }
     }
   }
@@ -1043,6 +1173,10 @@ h2 {
       font-weight: $fw-medium;
       font-size: $fs-xl;
     }
+
+    @media (max-width: $breakpoint-sm-max) {
+      flex-direction: column;
+    }
   }
 
   &__left,
@@ -1053,6 +1187,10 @@ h2 {
   &__left {
     .text {
       line-height: 2;
+    }
+
+    @media (max-width: $breakpoint-xs-max) {
+      margin-bottom: $base * 10;
     }
   }
 }
@@ -1176,6 +1314,18 @@ h2 {
       &-btn {
         margin-left: $base * 15;
       }
+
+      @media (max-width: $breakpoint-xs-max) {
+        flex-direction: column;
+
+        &-btn {
+          margin-left: 0;
+        }
+
+        &-text {
+          margin-bottom: $base * 2;
+        }
+      }
     }
   }
 }
@@ -1219,10 +1369,13 @@ h2 {
     }
 
     .text {
-      max-width: 60%;
       margin: 0 auto $base*10;
 
       line-height: 2;
+
+      @media (min-width: $breakpoint-sm-min) {
+        max-width: 60%;
+      }
     }
   }
 }
