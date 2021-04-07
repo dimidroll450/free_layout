@@ -120,6 +120,8 @@ $br-md: $base;
 
 body {
   @include roboto;
+  
+  padding-top: $base * 19;
 
   color: $color-gray-500;
 }
@@ -457,7 +459,37 @@ h2 {
 
 // === header ===
 .section-header {
-  position: relative;
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+
+  background-color: $color-white;
+
+  &::before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+
+    background-color: rgba(0, 0, 0, 0.5);
+
+    content: '';
+  }
+
+  &--active-nav {
+    &::before {
+      display: block;
+    }
+
+    .main-nav__inner-wrap {
+      display: flex;
+    }
+  }
 }
 
 .btn-burger {
