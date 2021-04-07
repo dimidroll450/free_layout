@@ -83,10 +83,22 @@ new Swiper('.slider-blog-container', {
     clickable: true,
   },
 
-  // Navigation arrows
   navigation: {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
 });
 // === / Blog ===
+
+// === Quotes ===
+new Swiper('.slider-quotes-container', {
+  loop: true,
+  slidesPerView: 'auto',
+  pagination: {
+    el: '.section-quotes .swiper-pagination',
+    clickable: true,
+  },
+});
+// === / Quotes ===
+
+// / Carousels

@@ -108,6 +108,7 @@ $br-md: $base;
 // === / Variables ===
 
 // === Common ===
+
 /* html {
   @media (max-width: $breakpoint-md-max) {
     font-size: 14px;
@@ -1229,6 +1230,8 @@ h2 {
 
 // === quotes ===
 .section-quotes {
+  overflow: hidden;
+
   background: linear-gradient(#eaebff, $color-gray-50);
 
   .section-inner {
@@ -1240,64 +1243,100 @@ h2 {
       font-size: $fs-xl;
     }
 
-    @media (max-width: $breakpoint-sm-max) {
+    @media (max-width: $breakpoint-md-max) {
       flex-direction: column;
     }
   }
 
   &__left,
   &__right {
-    flex-basis: 45%;
+    width: 45%;
+
+    @media (max-width: $breakpoint-md-max) {
+      width: 100%;
+    }
   }
 
   &__left {
     .text {
       line-height: 2;
     }
+  }
+}
 
-    @media (max-width: $breakpoint-xs-max) {
-      margin-bottom: $base * 10;
-    }
+.slider-quotes-container {
+  width: calc(50vw + #{$base*12});
+  margin: -$base*12 0 $base*10 -$base*12;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-md-max) {
+    width: 110vw;
+    margin-top: 0;
   }
 }
 
 .slider-quotes {
   @include list-null();
 
-  margin-bottom: $base * 20;
+  display: flex;
 
   &__item {
-    position: relative;
+    min-width: 25vw;
+    padding: $base * 12;
 
-    background-color: $color-white;
-    border: 1px solid #d8e3fe;
-    box-shadow: 0 $base $base*12 $color-gray-50;
+    opacity: 0.5;
 
-    &-text {
-      padding: $base*10 $base*17 $base*15;
+    transition: opacity $transition;
+  }
 
-      color: $color-gray-800;
-      font-style: $fs-s;
-      line-height: 2;
-    }
+  @media (max-width: $breakpoint-md-max) {
+    width: 50vw;
 
-    &-photo {
-      $height: $base * 15;
-
-      position: absolute;
-      top: 100%;
-      left: 50%;
-
-      width: $height;
-      height: $height;
-      overflow: hidden;
-
-      background-color: $color-white;
-
-      border-radius: $base * 25;
-      transform: translate(-50%, -$height/2);
+    &__item {
+      min-width: 100%;
     }
   }
+}
+
+.slider-quotes-item-content {
+  position: relative;
+
+  background-color: $color-white;
+  border: 1px solid #d8e3fe;
+  box-shadow: 0 $base $base*12 $color-gray-100;
+
+  &__text {
+    padding: $base*7 $base*9 $base*11;
+
+    color: $color-gray-800;
+    font-size: $fs-xs;
+    line-height: 2;
+  }
+
+  &__photo {
+    $height: $base * 15;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    width: $height;
+    height: $height;
+    overflow: hidden;
+
+    background-color: $color-white;
+
+    border-radius: $base * 25;
+    transform: translate(-50%, -$height/2);
+  }
+
+  @media (max-width: $breakpoint-md-max) {
+    width: 100%;
+  }
+}
+
+.swiper-slide-active {
+  opacity: 1;
 }
 // === / quotes ===
 

@@ -31,10 +31,10 @@
                 <a href="#" class="nav-wrapper__item-link nav-wrapper__item-link--active">Home</a>
               </li>
               <li class="nav-wrapper__item">
-                <a href="#" class="nav-wrapper__item-link">Blog</a>
+                <a href="#blog" class="nav-wrapper__item-link">Blog</a>
               </li>
               <li class="nav-wrapper__item">
-                <a href="#" class="nav-wrapper__item-link">Features</a>
+                <a href="#features" class="nav-wrapper__item-link">Features</a>
               </li>
               <li class="nav-wrapper__item">
                 <a href="#" class="nav-wrapper__item-link">Pricing</a>
@@ -176,7 +176,7 @@
   <!-- / plan-and-manage -->
 
   <!-- features -->
-  <section class="section-outer section-features">
+  <section class="section-outer section-features" id="features">
     <div class="section-inner ta-c vertical-indent vertical-indent--l">
       <h2 class="">ABOUT US</h2>
       <div class="section-subtitle">Read about our app</div>
@@ -240,7 +240,7 @@
   <!-- / stats -->
 
   <!-- blog -->
-  <section class="section-outer section-blog">
+  <section class="section-outer section-blog" id="blog">
     <div class="section-inner vertical-indent vertical-indent--l">
       <h2 class="ta-c">OUR RESOURCES</h2>
       <div class="section-subtitle ta-c">Start reading our blog</div>
@@ -250,13 +250,13 @@
           <ul class="slider-blog-wrapper swiper-wrapper">
             <li class="slider-blog-wrapper__item swiper-slide">
               <div class="slider-blog-wrapper__item-gallery">
-                <a href="#" class="image-link image-link--bg" aria-label="Image-1">
+                <a href="./images/blog/blog-image-1.png" data-fslightbox="gallery" class="image-link image-link--bg" aria-label="Image-1">
                   <img src="./images/blog/blog-image-1.png" alt="">
                 </a>
-                <a href="#" class="image-link image-link--sm-1" aria-label="Image-2">
+                <a href="./images/blog/blog-image-2.png" data-fslightbox="gallery" class="image-link image-link--sm-1" aria-label="Image-2">
                   <img src="./images/blog/blog-image-2.png" alt="">
                 </a>
-                <a href="#" class="image-link image-link--sm-2" aria-label="Image-3">
+                <a href="./images/blog/blog-image-3.png" data-fslightbox="gallery" class="image-link image-link--sm-2" aria-label="Image-3">
                   <img src="./images/blog/blog-image-3.png" alt="">
                 </a>
               </div>
@@ -275,22 +275,22 @@
             </li>
             <li class="slider-blog-wrapper__item swiper-slide">
               <div class="slider-blog-wrapper__item-gallery">
-                <a href="#" class="image-link image-link--bg" aria-label="Image-1">
+                <a href="./images/blog/blog-image-1.png" data-fslightbox="gallery-1" class="image-link image-link--bg" aria-label="Image-1">
                   <img src="./images/blog/blog-image-1.png" alt="">
                 </a>
-                <a href="#" class="image-link image-link--sm-1" aria-label="Image-2">
+                <a href="./images/blog/blog-image-3.png" data-fslightbox="gallery-1" class="image-link image-link--sm-1" aria-label="Image-2">
                   <img src="./images/blog/blog-image-3.png" alt="">
                 </a>
-                <a href="#" class="image-link image-link--sm-2" aria-label="Image-3">
+                <a href="./images/blog/blog-image-2.png" data-fslightbox="gallery-1" class="image-link image-link--sm-2" aria-label="Image-3">
                   <img src="./images/blog/blog-image-2.png" alt="">
                 </a>
               </div>
               <div class="slider-blog-wrapper__item-content">
                 <h3 class="slider-blog-wrapper__item-content-title">How to end planning</h3>
                 <div class="slider-blog-wrapper__item-content-text">
-                  Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos,
-                  vero tractatos ius an, in mel diceret persecuti. Natum petentium principes mei ea.
-                  Tota everti periculis vis ei, quas tibique pro at, eos ut decore ...
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis architecto assumenda
+                  rem placeat quia nostrum molestias. Recusandae est vitae fugiat rem! Reprehenderit soluta
+                  facilis eveniet voluptatem enim alias nesciunt voluptatum!
                 </div>
                 <div class="btn-group">
                   <a href="#" class="btn btn--primary">Read now</a>
@@ -320,28 +320,55 @@
         </div>
       </div>
       <div class="section-quotes__right">
-        <ul class="slider-quotes">
-          <li class="slider-quotes__item">
-            <div class="slider-quotes__item-text">
-              Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos,
-              vero tractatos ius an, in mel diceret persecuti.
-            </div>
-            <div class="slider-quotes__item-photo">
-              <img src="./images/upload/man.jpg" alt="">
-            </div>
-          </li>
-        </ul>
-        <ul class="dots">
-          <li class="dots__item"></li>
-          <li class="dots__item"></li>
-          <li class="dots__item dots__item--active"></li>
-          <li class="dots__item"></li>
-          <li class="dots__item"></li>
-          <li class="dots__item"></li>
-          <li class="dots__item"></li>
-          <li class="dots__item"></li>
-          <li class="dots__item"></li>
-        </ul>
+        <div class="slider-quotes-container swiper-container">
+          <ul class="slider-quotes swiper-wrapper">
+            <li class="slider-quotes__item swiper-slide">
+              <div class="slider-quotes-item-content">
+                <div class="slider-quotes-item-content__text">
+                  Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos,
+                  vero tractatos ius an, in mel diceret persecuti.
+                </div>
+                <div class="slider-quotes-item-content__photo">
+                  <img src="./images/upload/man.jpg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="slider-quotes__item swiper-slide">
+              <div class="slider-quotes-item-content">
+                <div class="slider-quotes-item-content__text">
+                  Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos,
+                  vero tractatos ius an, in mel diceret persecuti.
+                </div>
+                <div class="slider-quotes-item-content__photo">
+                  <img src="./images/upload/man.jpg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="slider-quotes__item swiper-slide">
+              <div class="slider-quotes-item-content">
+                <div class="slider-quotes-item-content__text">
+                  Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos,
+                  vero tractatos ius an, in mel diceret persecuti.
+                </div>
+                <div class="slider-quotes-item-content__photo">
+                  <img src="./images/upload/man.jpg" alt="">
+                </div>
+              </div>
+            </li>
+            <li class="slider-quotes__item swiper-slide">
+              <div class="slider-quotes-item-content">
+                <div class="slider-quotes-item-content__text">
+                  4 Quidam vocibus eum ne, erat consectetuer voluptatibus ut nam. Eu usu vidit tractatos,
+                  vero tractatos ius an, in mel diceret persecuti.
+                </div>
+                <div class="slider-quotes-item-content__photo">
+                  <img src="./images/upload/man.jpg" alt="">
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="dots swiper-pagination"></div>
       </div>
     </div>
   </section>
@@ -573,6 +600,7 @@
 
   <link href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/fslightbox.js"></script>
 
   <script src="./js/scripts.js"></script>
 </body>
