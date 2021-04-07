@@ -61,3 +61,32 @@ const getScrollbarWidth = () => {
   return scrollBarWidth;
 };
 // === / Burger ===
+
+// === Carousels ===
+
+// === Hero-image ===
+new Swiper('.section-hero-image', {
+  pagination: {
+    el: '.section-hero-image .swiper-pagination',
+    clickable: true,
+  },
+});
+// === / Hero-image ===
+
+// === Blog ===
+new Swiper('.slider-blog-container', {
+
+  loop: true,
+  // If we need pagination
+  pagination: {
+    el: '.section-blog .swiper-pagination',
+    clickable: true,
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+// === / Blog ===

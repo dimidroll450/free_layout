@@ -120,7 +120,7 @@ $br-md: $base;
 
 body {
   @include roboto;
-  
+
   padding-top: $base * 19;
 
   color: $color-gray-500;
@@ -364,22 +364,39 @@ h2 {
 
   display: flex;
   justify-content: center;
+}
 
-  &__item {
+.swiper-pagination-bullet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: $base * 6;
+  height: $base * 6;
+
+  cursor: pointer;
+
+  &::before {
+    display: block;
     width: $base * 2;
     height: $base * 2;
 
     background-color: $color-gray-100;
     border-radius: 100%;
-    cursor: pointer;
 
-    &--active {
+    transition: $transition;
+
+    content: '';
+  }
+
+  &-active {
+    &::before {
       background-color: $color-blue-600;
     }
+  }
 
-    & + & {
-      margin-left: $base * 3;
-    }
+  & + & {
+    margin-left: $base;
   }
 }
 
@@ -472,9 +489,10 @@ h2 {
     position: absolute;
     top: 100%;
     left: 0;
+
+    display: none;
     width: 100vw;
     height: 100vh;
-    display: none;
 
     background-color: rgba(0, 0, 0, 0.5);
 
@@ -608,6 +626,7 @@ h2 {
   position: relative;
 
   padding: 0;
+  overflow: hidden;
 
   background-color: lighten(#d8e0f7, 5%);
 
@@ -623,7 +642,10 @@ h2 {
 .slider-hero-image {
   @include list-null();
 
+  display: flex;
+
   &__item {
+    min-width: 100%;
     height: $base * 140;
 
     text-align: center;
@@ -977,7 +999,7 @@ h2 {
   }
 }
 
-.slider-wrapper {
+.slider-blog {
   position: relative;
 
   margin-bottom: $base * 25;
@@ -987,16 +1009,27 @@ h2 {
   }
 }
 
-.slider-blog {
-  @include list-null();
+.slider-blog-container {
+  position: relative;
+
+  overflow: hidden;
 
   background-color: $color-white;
   border: 1px solid $color-gray-100;
+
   box-shadow: 0 $base*3 $base*12 $color-gray-100;
+}
+
+.slider-blog-wrapper {
+  @include list-null();
+
+  display: flex;
 
   &__item {
     display: flex;
     justify-content: space-between;
+    box-sizing: border-box;
+    min-width: 100%;
     padding: $base*16 $base*8;
 
     &-gallery {
